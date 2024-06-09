@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário Interativo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon-32x32.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Para chegar ao objetivo, acerte as perguntas.</h1>
+        <div id="question-container">
+            <p id="question">Qual cor preferida do seu namorado?</p>
+            <input type="text" id="answer" placeholder="Sua resposta aqui">
+            <button id="next-button" onclick="checkAnswer()">Próxima</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu-te-amo</title>
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon-16x16.png">
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffffff 0%, #eb618c 100%);
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgb(31, 30, 30);
+            animation: float 1s infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+                opacity: 100;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+ 
+    <div id="container"></div>
+    <script>
+        const container = document.getElementById('container');
+        const message = 'EU TE AMO MUITO, Talita Evellyn!!!';
+        const heart = '❤️';
+        const totalMessages = 5000;
+
+        function createHeartMessage(presente) {
+            const div = document.createElement('div');
+            div.className = 'heart';
+            div.style.left = `${Math.random() * 70}vw`;
+            div.style.animationDuration = `${Math.random() * 8 + 3}s`;
+            div.textContent = `${message} ${heart}`;
+            container.appendChild(div);
+
+            setTimeout(() => {
+                container.removeChild(div);
+            }, 5000); // Duration of the animation
+        }
+
+        for (let i = 0; i < totalMessages; i++) {
+            setTimeout(() => {
+                createHeartMessage(i);
+            }, i * 300); // Adjust the delay as needed
+        }
+    </script>
+</body>
+</html>
